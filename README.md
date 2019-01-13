@@ -19,8 +19,11 @@ source activate metaAssemblyeval_env
 ```
 
 Install the MetaAssemblyEval dependencies into this environment:
+
+```sh
 conda install quast 
 Note: Bioconda is needed to install quast
+```
 
 ## <a name="preprocessing"></a>References
 
