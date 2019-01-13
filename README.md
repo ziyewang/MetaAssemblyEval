@@ -22,11 +22,21 @@ Install the MetaAssemblyEval dependencies into this environment:
 
 ```sh
 conda install quast 
-Note: Bioconda is needed to install quast
+Note: Bioconda is needed to install quast.
 ```
 
 ## <a name="preprocessing"></a>References
 
 [1] Mikheenko A, Saveliev V, and Gurevich A. MetaQUAST: Evaluation of metagenome assemblies. Bioinformatics, 32:1088-1090, 2016.
 
-[2]
+[2] Holtgrewe M. Mason-A read simulator for second generation sequencing data. Technical Report, FU Berlin, 2010.
+
+[3] Li D, Luo R, Liu CM, et al. MEGAHIT v1.0: A fast and scalable metagenome assembler driven by advanced methodologies and community practices. Methods, 102:3-11, 2016.
+
+[4] Nurk S, Meleshko D, Korobeynikov A, et al. MetaSPAdes: A new versatile metagenomic assembler. Genome Res, 27:824-834, 2017.
+
+[5] Peng Y, Leung HC, Yiu SM, et al. IDBA-UD: A de novo assembler for single-cell and metagenomic sequencing data with highly uneven depth. Bioinformatics, 28:1420-1428, 2012.
+
+[6] Faucet
+
+[7] ntcard
