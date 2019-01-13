@@ -1,6 +1,6 @@
 # MetaAssemblyEval
 Assessment of metagenomic assemblers based on hybrid reads of real and simulated metagenomic sequences.
-This is an evaluation strategy for metagenomic assemblers based on hybrid reads of real and simulated metagenomic sequences. The obtain the statistics of the contigs are based on metagenomic assembly evaluation tool, metaQUAST[1].
+This is an evaluation strategy for metagenomic assemblers based on hybrid reads of real and simulated metagenomic sequences. The statistics of the contigs are based on metagenomic assembly evaluation tool, metaQUAST[1].
 
 ## <a name="started"></a>Getting Started
 
@@ -21,8 +21,9 @@ source activate metaAssemblyeval_env
 Install the MetaAssemblyEval dependencies into this environment:
 conda install quast 
 Note: Bioconda is needed to install quast
+
 ## <a name="preprocessing"></a>References
 
-[1] 
+[1] Mikheenko A, Saveliev V, and Gurevich A. MetaQUAST: Evaluation of metagenome assemblies. Bioinformatics, 32:1088-1090, 2016.
 
 [2]
