@@ -37,6 +37,9 @@ Note: Bioconda is needed to install quast.
 
 [5] Peng Y, Leung HC, Yiu SM, et al. IDBA-UD: A de novo assembler for single-cell and metagenomic sequencing data with highly uneven depth. Bioinformatics, 28:1420-1428, 2012.
 
-[6] Faucet
+[6] Rozov R, Goldshlager G, Halperin E, et al. Faucet: streaming de novo assembly graph con-
+struction. Bioinformatics, 34:147-154, 2018.
 
-[7] ntcard
+[7] Mohamadi H, Khan H, and Birol I. ntCard: a streaming algorithm for cardinality estimation
+in genomics data. Bioinformatics, 33:1324-1330, 2017.
+24
