@@ -42,4 +42,4 @@ struction. Bioinformatics, 34:147-154, 2018.
 
 [7] Mohamadi H, Khan H, and Birol I. ntCard: a streaming algorithm for cardinality estimation
 in genomics data. Bioinformatics, 33:1324-1330, 2017.
-24
+
