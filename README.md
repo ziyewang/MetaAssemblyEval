@@ -30,6 +30,7 @@ Note: Bioconda is needed to install quast.
 > - Usage:         [--r1 forward read file of real metagenome]
                    [--r2 reverse read file of real metagenome]
                    [--sequencing_depth SEQUENCING_DEPTH]
+		   [--read_length READ_LENGTH]
                    [--genome_sequence_dir GENOME_SEQUENCE_DIR] 
                    [--output OUTPUT]
 
@@ -50,12 +51,12 @@ Note: Bioconda is needed to install quast.
               
     --output OUTPUT:       
               The output dir, storing the statistics results of the assembly.
-              
-              
-              
-              
-    
-              
+
+> - optional
+  
+    --read_length READ_LENGTH:
+              The read length.
+                       
 ## <a name="preprocessing"></a>References
 
 [1] Mikheenko A, Saveliev V, and Gurevich A. MetaQUAST: Evaluation of metagenome assemblies. Bioinformatics, 32:1088-1090, 2016.
