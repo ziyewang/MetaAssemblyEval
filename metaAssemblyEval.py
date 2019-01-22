@@ -131,6 +131,7 @@ if __name__ == '__main__':
     simualtion(genome_path, sequence_depth, read_length, out_dir)
     running_assemblers(out_dir, r1, r2, read_length)
     evaluation(out_dir, genome_path)
+    logger.info("Thank you for using metaAssemblyEval!")
 
 
 
