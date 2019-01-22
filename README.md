@@ -4,7 +4,7 @@ This is an evaluation strategy for metagenomic assemblers based on hybrid reads 
 
 ## <a name="started"></a>Getting Started
 
-We recommend using Anaconda to run MetaAssemblyEval. Download [here](https://www.continuum.io/downloads)
+We recommend using Anaconda to run MetaAssemblyEval. 
 
 After installing Anaconda, fisrt obtain MetaAssemblyEval:
 
