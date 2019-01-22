@@ -29,14 +29,14 @@ def arguments():
     parser.add_argument('--read_length', default=101, type=int,
                         help="Specify the read length. It is default value is 101.")
     parser.add_argument('--genome_sequence_dir', type=str, help=(
-        "The input dir where the sequence of the genomes to be added in the real metagenome locates，ending with '\'."))
-    parser.add_argument('--output', type=str, help="The output dir, storing the statistics results of the assembly.")
+        "The input dir where the sequence of the genomes to be added in the real metagenome locates，ending with '/'."))
+    parser.add_argument('--output', type=str, help="The output dir, storing the statistics results of the assembly, ending with '/'.")
 
     args = parser.parse_args()
 
-    if not (args.r1 and args.r2 and args.output and args.sequencing_depth):
+    if not (args.r1 and args.r2 and args.output and args.sequencing_depth and args.genome_sequence_dir ):
         parser.error(
-            "Data is missing, add file(s) using --r1 <read_file> and/or --r2 <read_file> and/or --output <out_file>")
+            "Data is missing, add file(s) using --r1 <read_file> and/or --r2 <read_file> and/or genome_sequence_dir <dir>-- and/or --output <out_dir>")
         sys.exit(0)
     return args
 
