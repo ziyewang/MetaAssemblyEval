@@ -30,14 +30,6 @@ def arguments():
                         help="Specify the read length. It is default value is 101.")
     parser.add_argument('--genome_sequence_dir', type=str, help=(
         "The input dir where the sequence of the genomes to be added in the real metagenome locates，ending with '\'."))
-    # parser.add_argument('--MEGAHIT_path', default=NULL, type=str, help="The install path of MEGAHIT. eg, 'home/megahit/'")
-    # parser.add_argument('--metaSPAdes_path', type=str, help="The install path of metaSPAdes. eg, '/home/SPAdes-3.12.0-Linux/bin/'")
-    # parser.add_argument('--IDBA_path', type=str,
-    #                    help="The install path of IDBA-UD. eg, '/home/idba-1.1.1/bin/'")
-    # parser.add_argument('--Faucet_path', type=str,
-    #  help="The install path of Faucet. eg, '/home/Faucet-master/src/'")
-    # parser.add_argument('--Faucet_path', type=str,
-    #    help="The install path of Faucet. eg, '/home/Faucet-master/src/'")
     parser.add_argument('--output', type=str, help="The output dir, storing the statistics results of the assembly.")
 
     args = parser.parse_args()
@@ -82,15 +74,14 @@ def running_assemblers(out_dir, r1, r2, read_length):
     os.system('cat %s*_1.fq %s >> %smerge_1.fq' % (out_dir, r1, out_dir))
     os.system('cat %s*_2.fq %s >> %smerge_2.fq' % (out_dir, r2, out_dir))
     fq2fa_url = os.path.join(os.getcwd(), 'auxiliary', 'idba-1.1.1', 'bin',
-                             'fq2fa')  # '/home/wzy/binning/MaxBin-2.2.4/auxiliary/idba-1.1.1/bin/fq2fa'
+                             'fq2fa') 
     fq2fa_cmd = fq2fa_url + " --merge --filter " + out_dir + 'merge_1.fq ' + out_dir + 'merge_2.fq ' + out_dir + 'merge.fa '
     os.system(fq2fa_cmd)
     megahit_cmd = '/home/wzy/tools/assembly_tool/megahit/megahit ' + '-1 ' + out_dir + 'merge_1.fq ' + '-2 ' + out_dir + 'merge_2.fq ' + '-o ' + out_dir + 'megahit_contig'
     os.system(megahit_cmd)
     metaspades_cmd = '/home/wzy/tools/assembly_tool/SPAdes-3.12.0-Linux/bin/spades.py' + ' --meta' + ' -1 ' + out_dir + 'merge_1.fq ' + '-2 ' + out_dir + 'merge_2.fq ' + '-o ' + out_dir + 'metaspades_contig'
     os.system(metaspades_cmd)
-    # idba_ud_url = os.path.join(os.getcwd(), 'auxiliary', 'idba-1.1.1', 'bin', 'idba_ud')
-    idba_ud_url = '/home/wzy/binning/MaxBin-2.2.4/auxiliary/idba-1.1.1/bin/idba_ud'
+    idba_ud_url = os.path.join(os.getcwd(), 'auxiliary', 'idba-1.1.1', 'bin', 'idba_ud')
     idba_ud_cmd = idba_ud_url + ' --pre_correction' + ' -r ' + out_dir + 'merge.fa ' + '-o ' + out_dir + 'idba_contig'
     os.system(idba_ud_cmd)
     ntcard_cmd = 'ntcard -t 10 -k31 -p ' + out_dir + 'ntcard_result ' + out_dir + 'merge.fa'
