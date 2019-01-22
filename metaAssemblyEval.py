@@ -60,13 +60,13 @@ def simualtion(genome_path, sequence_depth, read_length, out_dir):
     files = os.listdir(genome_path)
     for file in files:
         if not os.path.isdir(genome_path + file):
-            input_file = open(genome_path + file, "r")
-            reader = input_file.readlines()
-            items = process_file(reader)
-            length = int(len(str(items.values())))
-            n = length * sequence_depth / (2 * read_length)
-            os.system('mason_simulator --illumina-read-length %d -ir %s%s -n %d -o %s%s_1.fq -or %s%s_2.fq' % (
-                read_length, genome_path, file, n, out_dir, file, out_dir, file))
+            if file[-5:] == 'fasta':
+                input_file = open(genome_path + file, "r")
+                reader = input_file.readlines()
+                items = process_file(reader)
+                length = int(len(str(items.values())))
+                n = length * sequence_depth / (2 * read_length)
+                os.system('mason_simulator --illumina-read-length %d -ir %s%s -n %d -o %s%s_1.fq -or %s%s_2.fq' % ( read_length, genome_path, file, n, out_dir, file, out_dir, file))
     logger.info("simulation finished")
 
 
