@@ -5,6 +5,7 @@ This is an evaluation strategy for metagenomic assemblers based on hybrid reads 
 ## <a name="started"></a>Getting Started
 
 We recommend using Anaconda to run MetaAssemblyEval. 
+Note: Mason[2], MEGAHIT[3], SPAdes[4], Faucet[6] and ntcard[7] should be installed to run MetaAssemblyEval. Users need to set the directories of dependency software in environmental variables.
 
 After installing Anaconda, fisrt obtain MetaAssemblyEval:
 
