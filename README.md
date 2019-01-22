@@ -24,7 +24,38 @@ Install the MetaAssemblyEval dependencies into this environment:
 conda install quast 
 Note: Bioconda is needed to install quast.
 ```
+## <a name="usage"></a>Usage
 
+
+> - Usage:         [--r1 forward read file of real metagenome]
+                   [--r2 reverse read file of real metagenome]
+                   [--sequencing_depth SEQUENCING_DEPTH]
+                   [--genome_sequence_dir GENOME_SEQUENCE_DIR] 
+                   [--output OUTPUT]
+
+
+> - arguments
+				
+  	--r1 R1: 
+              File with forward reads of real metagenome.
+	
+  	--r2 R2: 
+              File with reverse reads of real metagenome.
+         
+    --sequencing_depth SEQUENCING_DEPTH:
+              The sequencing depth of simulated genomes.
+              
+    --genome_sequence_dir GENOME_SEQUENCE_DIR:
+              The input dir where the sequence of the genomes to be added in the real metagenome locates，ending with '/'.
+              
+    --output OUTPUT:       
+              The output dir, storing the statistics results of the assembly.
+              
+              
+              
+              
+    
+              
 ## <a name="preprocessing"></a>References
 
 [1] Mikheenko A, Saveliev V, and Gurevich A. MetaQUAST: Evaluation of metagenome assemblies. Bioinformatics, 32:1088-1090, 2016.
