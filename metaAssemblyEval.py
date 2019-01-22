@@ -67,7 +67,7 @@ def simualtion(genome_path, sequence_depth, read_length, out_dir):
                 length = int(len(str(items.values())))
                 n = length * sequence_depth / (2 * read_length)
                 os.system('mason_simulator --illumina-read-length %d -ir %s%s -n %d -o %s%s_1.fq -or %s%s_2.fq' % ( read_length, genome_path, file, n, out_dir, file, out_dir, file))
-    logger.info("simulation finished")
+    logger.info("Simulation finished.")
 
 
 def running_assemblers(out_dir, r1, r2, read_length):
@@ -98,7 +98,7 @@ def running_assemblers(out_dir, r1, r2, read_length):
     faucet_cmd = '/mnt/data2/wzy/assembly/Faucet-master/src/faucet' + ' -read_load_file ' + out_dir + 'merge.fa' + ' -read_scan_file ' + out_dir + 'merge.fa' + ' --paired_ends -size_kmer 31 -max_read_length ' + str(
         read_length) + ' -estimated_kmers ' + F0 + ' -singletons ' + f1 + ' -file_prefix ' + out_dir + 'faucet_contig/faucet'
     os.system(faucet_cmd)
-    logger.info("assembly finished")
+    logger.info("Assembly finished.")
 
 
 def evaluation(out_dir, genome_path):
@@ -118,7 +118,7 @@ def evaluation(out_dir, genome_path):
 
     quast_cmd = 'metaquast.py ' + out_dir + 'megahit_contig/final.contigs.fa ' + out_dir + 'metaspades_contig/contigs.fasta ' + out_dir + 'idba_contig/contig.fa ' + out_dir + 'faucet_contig/faucet.cleaned_contigs.fasta'+' -r '+reference+ ' -1 '+out_dir+ 'merge_1.fq'+ ' -2 '+out_dir+ 'merge_2.fq'+' -o '+out_dir+'quast_output'+' --space-efficient -l MEGAHIT,metaSPAdes,IDBA-UD,Faucet'
     os.system(quast_cmd)
-    logger.info("evaluation finished")
+    logger.info("Evaluation finished.")
 
 if __name__ == '__main__':
     args = arguments()
@@ -128,8 +128,11 @@ if __name__ == '__main__':
     read_length = args.read_length
     r1 = args.r1
     r2 = args.r2
+    logger.info("Simulation begin.")
     simualtion(genome_path, sequence_depth, read_length, out_dir)
+    logger.info("Assembly begin.")
     running_assemblers(out_dir, r1, r2, read_length)
+    logger.info("Evaluation begin.")
     evaluation(out_dir, genome_path)
     logger.info("Thank you for using metaAssemblyEval!")
 
